@@ -4,6 +4,7 @@ package com.crm.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 import com.crm.qa.base.TestBase;
@@ -35,7 +36,17 @@ public class AmazonLoginPage extends TestBase{
 		}
 		
 		//Actions:
+	public  String title(){
+			
+		String abc=	driver.getTitle();
 		
+			 
+			 System.out.println(abc);
+			 String exp="Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in";
+			Assert.assertEquals(abc, exp);
+			return abc;
+			 
+			}	
 		
 		
 		public  AmazonHomePage login(String em, String pm){
@@ -46,15 +57,12 @@ public class AmazonLoginPage extends TestBase{
 			password.sendKeys(pm);
 			 loginBtn.click();
 			 
+			  return new AmazonHomePage();
 			 
-			 return new AmazonHomePage();
-			
+			}
 		
-			    	
-			    	
 		
-		}
-		
+	
 	}
 
 

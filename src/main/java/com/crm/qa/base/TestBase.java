@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.annotations.Parameters;
 
 import com.crm.qa.util.TestUtil;
 import com.crm.qa.util.WebEventListener;
@@ -36,9 +37,9 @@ public class TestBase {
 		}
 	}
 	
-	
-	public static void initialization(){
-		String browserName = prop.getProperty("browser");
+	@Parameters("browserName")
+	public static void initialization(String browserName){
+		//String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "/Users/Hp/Downloads/Selenium/chromedriver.exe");	

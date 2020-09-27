@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -22,7 +23,7 @@ public class AmazonLoginPageTest extends TestBase {
 		
 		@BeforeMethod
 		public void setUp(){
-			initialization();
+			initialization("browserName");
 			amazonLoginPage= new AmazonLoginPage();	
 			
 		}
@@ -37,6 +38,20 @@ public class AmazonLoginPageTest extends TestBase {
 		
 		
 		@Test(dataProvider="getLoginData")*/
+		
+		
+		
+		@Test
+		public void verifytitle() {
+			amazonLoginPage.title();
+			
+			
+			
+	}
+		
+		
+		
+		
 		@Test
 		public void loginTest() {
 			

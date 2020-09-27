@@ -8,6 +8,7 @@
           <include name="tearDown"/>
           <include name="loginTest"/>
           <include name="setUp"/>
+          <include name="verifytitle"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.AmazonLoginPageTest -->
     </classes>

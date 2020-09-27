@@ -25,12 +25,20 @@ public class AmazonHomePageTest extends TestBase {
 	public void setUp(){
 		initialization();
 		amazonHomePage= new AmazonHomePage();
-		amazonLoginPage = new AmazonLoginPage();
-		amazonHomePage = amazonLoginPage.login(prop.getProperty("email"), prop.getProperty("password"));
+		//amazonLoginPage = new AmazonLoginPage();
+		//amazonHomePage = amazonLoginPage.login(prop.getProperty("email"), prop.getProperty("password"));
 		
 		}
 	
-	@Test
+	@Test(priority=1)
+	public void verifyFooterTest() {
+		
+		amazonHomePage.verifyFooter();
+		
+	}
+	
+	
+	@Test(priority=2)
 	public void searchproductTest() {
 		
 		amazonHomePage.searchProduct("apple");
